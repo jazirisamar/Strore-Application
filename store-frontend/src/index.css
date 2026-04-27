@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Colors - Antigravity Pro Palette */
+  --primary: #6366f1;      /* Indigo Vivid */
+  --primary-glow: rgba(99, 102, 241, 0.4);
+  --secondary: #10b981;    /* Emerald */
+  --accent: #f43f5e;       /* Rose */
+  
+  --bg-app: #0f172a;       /* Slate 900 - Deep cosmic dark */
+  --bg-surface: #1e293b;   /* Slate 800 */
+  --bg-card: rgba(30, 41, 59, 0.7);
+  
+  --text-main: #f8fafc;    /* Slate 50 */
+  --text-muted: #94a3b8;   /* Slate 400 */
+  
+  --border-light: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  
+  /* Gradients */
+  --grad-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  --grad-surface: linear-gradient(180deg, rgba(30, 41, 59, 1) 0%, rgba(15, 23, 42, 1) 100%);
+  --grad-hero: radial-gradient(circle at top right, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
+               radial-gradient(circle at bottom left, rgba(139, 92, 246, 0.1) 0%, transparent 30%);
+
+  /* Shadows */
+  --shadow-neon: 0 0 20px rgba(99, 102, 241, 0.3);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  
+  /* Shapes */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
+
+  /* Transitions */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Layout */
+  --sidebar-width: 280px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--bg-app);
+  background-image: var(--grad-hero);
+  color: var(--text-main);
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Glassmorphism Evolution */
+.glass {
+  background: rgba(30, 41, 59, 0.4);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel {
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+}
+
+.card-modern {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  transition: var(--transition-smooth);
+}
+
+.card-modern:hover {
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+/* Typography Gradient */
+.gradient-text {
+  background: var(--grad-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Buttons Evolution */
+.btn-primary {
+  background: var(--grad-primary);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-main);
+  border: 1px solid var(--border-light);
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Layout Classes */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-success { background: rgba(16, 185, 129, 0.2); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); }
+.badge-warning { background: rgba(245, 158, 11, 0.2); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); }
+.badge-danger { background: rgba(244, 63, 94, 0.2); color: #f43f5e; border: 1px solid rgba(244, 63, 94, 0.3); }
+.badge-info { background: rgba(59, 130, 246, 0.2); color: #3b82f6; border: 1px solid rgba(59, 130, 246, 0.3); }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-app); }
+::-webkit-scrollbar-thumb { background: var(--bg-surface); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
